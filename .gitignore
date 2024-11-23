@@ -1,0 +1,58 @@
+# Byte-compiled files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+.venv/
+.env/
+
+# Django secret key
+*.env
+
+# SQLite database
+db.sqlite3
+*.sqlite3
+
+
+# Static files
+/static/
+
+# IDE-specific files
+.vscode/
+.idea/
+*.swp
+
+# Logs
+*.log
+
+# Cache files
+*.cache
+*.lock
+*.pid
+*.bak
+
+# Coverage reports
+.coverage
+htmlcov/
+*.cover
+*.py,cover
+
+# Testing
+.tox/
+.nox/
+.pytest_cache/
+nosetests.xml
+coverage.xml
+
+# Temporary files
+*.tmp
+*.bak
+*.orig
+*.save
+*.~*
+
+# macOS-specific
+.DS_Store
+.AppleDouble
+.LSOverride

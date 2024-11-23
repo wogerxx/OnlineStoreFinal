@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="vh-100 bg-dark">
+    <div class="container py-5 h-100">
+        <div class="row d-flex align-items-center justify-content-center h-100">
+            <div class="col-md-8 col-lg-7 col-xl-6">
+                <img
+                    src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.svg"
+                    class="img-fluid"
+                    alt="Phone image"
+                />
+            </div>
+            <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
+                <form method="post">
+
+                    {% csrf_token %}
+                    <!-- Email input -->
+                    <div data-mdb-input-init class="form-outline mb-4">
+                        <input
+                            type="email"
+                            name="username"
+                            id="form1Example13"
+                            class="text-light form-control form-control-lg"
+                        />
+                        <label class="text-light form-label" for="form1Example13">Email address</label>
+                    </div>
+
+                    <!-- Password input -->
+                    <div data-mdb-input-init class="form-outline mb-4">
+                        <input
+                            type="password"
+                            name="password"
+                            id="form1Example23"
+                            class="text-light form-control form-control-lg"
+                        />
+                        <label class="text-light form-label" for="form1Example23">Password</label>
+                    </div>
+
+                    <div class="d-flex justify-content-around align-items-center mb-4">
+                        <a href="{% url 'password_reset' %}">Forgot password?</a>
+                    </div>
+
+                    <!-- Submit button -->
+                    <button
+                        type="submit"
+                        data-mdb-button-init
+                        data-mdb-ripple-init
+                        class="btn btn-primary btn-lg btn-block"
+                    >
+                        Sign in
+                    </button>
+
+                    <div class="divider d-flex align-items-center my-4 d-flex justify-content-center">
+                        <p class="text-light text-center fw-bold mx-3 mb-0">OR</p>
+                    </div>
+
+					<a href="{% url 'social:begin' 'google-oauth2' %}" style="display: flex; align-items: center; justify-content: center; text-decoration: none;">
+						<img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/2058fb75442843.5c4cd14030bd5.png" alt="Continue with Google" style="width: 40px; height: 40px;">
+						<span style="margin-top: 5px; font-size: 14px;">Continue with Google</span>
+					</a>
+                </form>
+                <div class="d-flex justify-content-center mt-3">
+                    <p class="m-0 text-light">
+                        Don't have an account?
+                        <a href="{% url 'signup' %}">Sign up</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

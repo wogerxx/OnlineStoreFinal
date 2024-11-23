@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}Categories | Online Store{% endblock %}
+
+{% block content %}
+<div class="container m-auto mt-5 row gap-2 justify-content-center">
+    {% for category in categories %}
+    <div class="card col-3 p-0">
+        <img
+            class="card-img-top"
+            src="https://i.ytimg.com/vi/2QvOxa_7wEw/maxresdefault.jpg"
+            alt="Card image cap"
+        />
+        <div class="card-body">
+            <h3>
+                <a class="text-decoration-none" href="{% url 'category_detail' category.id %}"
+                    >{{ category.name }}</a
+                >
+            </h3>
+            <p class="card-text">
+                {{ category.description }}
+            </p>
+            <div class="d-flex flex-column gap-2"></div>
+        </div>
+    </div>
+    {% endfor %}
+    
+    {% include 'components/_paginator.html' %}
+</div>
+{% endblock %}
